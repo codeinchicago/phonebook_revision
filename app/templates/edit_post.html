@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Kekambas Blog | Create A Post{% endblock %}
+
+{% block content %}
+<h4>Edit {{ post.title }}</h4>
+<form method="post">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        {{ form.address.label }}
+        {{ form.title(class='form-control', value=post.address) }}
+
+        {{ form.phone.label }}
+        {{ form.body(class='form-control', value=post.phone) }}
+
+        {{ form.submit(class='btn btn-primary w-100 mt-3') }}
+    </div>
+</form>
+{% endblock %}
